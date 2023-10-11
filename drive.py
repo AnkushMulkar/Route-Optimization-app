@@ -1,6 +1,6 @@
 import streamlit as st
 import math
-from geopy.geocoders import Nominatim  # Add this import
+import geocoder
 from ortools.constraint_solver import routing_enums_pb2, pywrapcp
 import folium
 from streamlit_folium import folium_static
