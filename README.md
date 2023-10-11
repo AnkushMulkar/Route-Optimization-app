@@ -1,10 +1,10 @@
-**Customer Route Optimization Web App**
+**Customer Route Optimization Web App** <br/>
 **Overview:**
 This web application provides users an optimized route based on their address and a list of customer addresses. By providing the starting address and a list of customer addresses, users can visualize the optimal path to visit each customer, with distances provided for each segment of the journey.
 
 **Features:**
 Address Input: User can provide their starting address and a list of customer addresses they wish to visit.
-Optimized Routing: Using the Google OR-Tools, the application finds the shortest route to visit all the addresses and returns to the starting point.
+Optimized Routing: Using Google OR-Tools, the application finds the shortest route to visit all the addresses and returns to the starting point.
 Map Visualization: The optimized route is visualized on a map, clearly marking each address. The path between each address is highlighted using blue lines.
 Distance Details: The application provides distance details for each segment of the journey and the total distance to be covered.
 
@@ -39,6 +39,7 @@ Click the "Optimize Route" button.
 View the optimized route details and visualize the route on the map.
 
 **Screenshots:**
+![Uploading Screenshot (767).png…]()
 
 **Acknowledgements:**
 
