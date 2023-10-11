@@ -1,6 +1,6 @@
 import streamlit as st
 import math
-from geopy.geocoders import Nominatim
+from geopy.geocoders import Nominatim  # Add this import
 from ortools.constraint_solver import routing_enums_pb2, pywrapcp
 import folium
 from streamlit_folium import folium_static
@@ -9,6 +9,7 @@ from folium.plugins import AntPath
 # Initialize geolocator
 geolocator = Nominatim(user_agent="geoapi")
 
+# Custom geocode function using Nominatim
 def geocode(address):
     """Convert address to latitude and longitude."""
     location = geolocator.geocode(address)
@@ -16,6 +17,7 @@ def geocode(address):
         return (location.latitude, location.longitude)
     return None
 
+# Custom distance calculation function
 def distance(origin, destination):
     """Calculate the Haversine distance."""
     lat1, lon1 = origin
@@ -31,6 +33,9 @@ def distance(origin, destination):
     d = radius * c
 
     return d
+
+# Initialize geolocator
+geolocator = Nominatim(user_agent="geoapi")
 
 def optimize_route(locations):
     """
