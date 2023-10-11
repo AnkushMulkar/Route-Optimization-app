@@ -1,5 +1,5 @@
 folium
-geopy==2.4.0
+geopy==2.0
 ortools
 streamlit
 streamlit-folium
