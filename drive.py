@@ -1,20 +1,23 @@
 import streamlit as st
 import math
-import geocoder
+from opencage.geocoder import OpenCageGeocode
 from ortools.constraint_solver import routing_enums_pb2, pywrapcp
 import folium
 from streamlit_folium import folium_static
 from folium.plugins import AntPath
 
-# Initialize geolocator
-geolocator = Nominatim(user_agent="geoapi")
+# Set up your OpenCage Geocoding API key
+api_key = "2b7590bc99574e5d871274fde88092cf"
+geocoder = OpenCageGeocode(api_key)
 
-# Custom geocode function using Nominatim
+# Custom geocode function using OpenCage Geocoding
 def geocode(address):
-    """Convert address to latitude and longitude."""
-    location = geolocator.geocode(address)
-    if location:
-        return (location.latitude, location.longitude)
+    """Convert address to latitude and longitude using OpenCage Geocoding."""
+    result = geocoder.geocode(address)
+    if result and len(result):
+        lat = result[0]['geometry']['lat']
+        lng = result[0]['geometry']['lng']
+        return lat, lng
     return None
 
 # Custom distance calculation function
@@ -33,9 +36,6 @@ def distance(origin, destination):
     d = radius * c
 
     return d
-
-# Initialize geolocator
-geolocator = Nominatim(user_agent="geoapi")
 
 def optimize_route(locations):
     """
