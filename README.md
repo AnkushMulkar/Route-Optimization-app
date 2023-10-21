@@ -1,5 +1,7 @@
 # Customer Route Optimization Web App
 
+![Screenshot (767)](https://github.com/AnkushMulkar/Route-Optimization-app/assets/94743425/5daa517f-8750-49a1-90b1-4f5f1edaa81d)
+
 **Overview:** <br/>
 This web application provides users an optimized route based on their address and a list of customer addresses. By providing the starting address and a list of customer addresses, users can visualize the optimal path to visit each customer, with distances provided for each segment of the journey.
 
